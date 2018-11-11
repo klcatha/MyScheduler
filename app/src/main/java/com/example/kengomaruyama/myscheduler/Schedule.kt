@@ -2,7 +2,7 @@ package com.example.kengomaruyama.myscheduler
 
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
-import java.util.*
+import java.util.Date
 
 class Schedule : RealmObject(){
     @PrimaryKey
