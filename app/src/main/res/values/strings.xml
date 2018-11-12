@@ -4,4 +4,6 @@
     <string name="textViet_text">日付：</string>
     <string name="textView2_text" >タイトル：</string>
     <string name="textView3_text">詳細：</string>
+    <string name="save_text">保存</string>
+    <string name="delete_text">削除</string>
 </resources>
