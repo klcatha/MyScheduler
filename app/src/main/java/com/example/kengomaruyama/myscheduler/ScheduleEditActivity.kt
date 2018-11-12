@@ -36,6 +36,17 @@ class ScheduleEditActivity : AppCompatActivity() {
             delete.visibility = View.INVISIBLE
         }
 
+        delete.setOnClickListener {
+            realm.executeTransaction {
+                realm.where<Schedule>().equalTo("id", scheduleId)
+                        ?.findFirst()
+                        ?.deleteFromRealm()
+            }
+            alert ("削除しました"){
+                yesButton { finish() }
+            }.show()
+        }
+
 
         save.setOnClickListener {
             when (scheduleId) {
