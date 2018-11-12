@@ -3,6 +3,7 @@ package com.example.kengomaruyama.myscheduler
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.format.DateFormat
+import android.view.View
 import io.realm.Realm
 import io.realm.kotlin.createObject
 import io.realm.kotlin.where
@@ -23,14 +24,18 @@ class ScheduleEditActivity : AppCompatActivity() {
         realm = Realm.getDefaultInstance()
 
         val scheduleId = intent?.getLongExtra("schedule_id", -1L)
-        if(scheduleId != -1L){
+        if(scheduleId != -1L) {
             val schedule = realm.where<Schedule>()
-                    .equalTo("id",scheduleId).findFirst()
+                    .equalTo("id", scheduleId).findFirst()
             dateEdit.setText(
                     DateFormat.format("yyyy/MM/dd", schedule?.date))
             titleEdit.setText(schedule?.title)
             detailEdit.setText(schedule?.detail)
+            delete.visibility = View.VISIBLE
+        } else {
+            delete.visibility = View.INVISIBLE
         }
+
 
         save.setOnClickListener {
             when (scheduleId) {
