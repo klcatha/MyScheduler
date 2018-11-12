@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">MyScheduler</string>
     <string name="action_settings">Settings</string>
+    <string name="textViet_text">日付：</string>
+    <string name="textView2_text" >タイトル：</string>
+    <string name="textView3_text">詳細：</string>
 </resources>
